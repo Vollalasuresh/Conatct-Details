@@ -2,8 +2,6 @@ const express =require('express');
 const pug=require('pug');
 const bodyparser=require('body-parser');
 const path= require('path');
-const validator=require('express-validator');
-
 const pdf=require('pdfkit')
 
 const app= express();
@@ -12,11 +10,6 @@ app.set('view engine','pug');
 app.use(bodyparser.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname+'/public/')));
 
-
-
-
-
-
 app.get('/',(req,res)=>
 {
     res.render('home');
@@ -24,11 +17,6 @@ app.get('/',(req,res)=>
 
 app.post('/details',(req,res)=>
 {
-   let name= req.body.name;
-   let location= req.body.location;
-
-
-
     const doc= new pdf();
     let filename= req.body.name;
     filename= encodeURIComponent(filename)+'.pdf';
@@ -45,13 +33,8 @@ app.post('/details',(req,res)=>
     doc.text('Skill Set:',100,450).text(req.body.skills,350,450)
     doc.text('Educational Qualifications:',100,500).text(req.body.edu,350,500)
     doc.text('Achievements:',100,550).text(req.body.ach,350,550)
-    // doc.text('Achievements:',100,600).text(req.body.location,200,600)
     doc.pipe(res);
-    // console.log("from pipe",doc)
-    doc.end();
-    // console.log(doc)
-
-   
+    doc.end();  
     
 
 })
@@ -59,3 +42,4 @@ app.post('/details',(req,res)=>
 // app.listen(5000,()=>console.log("listening at 3000"));
 
 module.exports=app;
+
