@@ -1,0 +1,59 @@
+extends base
+block content
+    h1 Creating PDF downloadale Form
+    form(action="/details", method="post" class="data")
+        lable Name:
+        br
+        br
+        input(type="text", name="name" placeholder='Enter Your Name')
+        br
+        br
+        lable Location:
+        br
+        br
+        input(type='text' name ='location' placeholder ='enter location')
+        br
+        br
+        lable Email :
+        br
+        br
+        input(type="email", name="email", placeholder='enter a email')
+        br
+        br
+        lable Conatct Details:
+        br
+        br
+        input(type="number", name="phone" placeholder='9876543210')
+        br
+        br
+        label About me:
+        br
+        br
+        textarea(name="aboutme", placeholder='Describe about your self' cols="30", rows="2" )
+        br
+        br
+        lable Work Experience:
+        br
+        br
+        input(type="text" name='exp', placeholder='2yrs')
+        br
+        label Skill Set
+        br
+        input(type='text' name='skills' placeholder='java,html')
+        br
+        br
+        label Education Qualifications:
+        br
+        br
+        input(type='text' name='edu' placeholder='B tech')
+        br
+        br
+        label Achievements:
+        br
+        br
+        textarea(name='ach' cols='50' rows='2' placeholder='Describe about Your Achievements')
+        br
+        br
+        input(type='submit' value='Download')
+
+

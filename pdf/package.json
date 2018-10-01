@@ -1,0 +1,22 @@
+{
+  "name": "pdf-form",
+  "version": "1.0.0",
+  "description": "This app lets you to download the details in pdf once user submits the data",
+  "main": "app.js",
+  "scripts": {
+    "start":"nodejs ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords":[
+    "heroku"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "path": "^0.12.7",
+    "pdfkit": "^0.8.3",
+    "pug": "^2.0.3"
+  }
+}
